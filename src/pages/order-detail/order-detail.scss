@@ -1,0 +1,77 @@
+page-order-detail {
+    p {
+        font-family: Gotham-Bold, sans-serif;
+        line-height: 0.6em;
+        color: #414141;
+        // font-family: Gotham-Medium, sans-serif;
+        // font-family: Nanami-Light, sans-serif;
+        // font-family: Gotham-Book, sans-serif;
+    }
+    #totHours {
+        color: #414141;
+    }
+    #totDesc {
+        color: #818181;
+        // text-transform: uppercase;
+        font-size: 0.8em;
+    }
+    #grey {
+        color: #818181;
+    }
+    #trash-icon {
+        color: #FF5B4C
+    }
+    ion-row #underline {
+        border-bottom: #b1b1b1 0.25px solid; 
+    }
+    .centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+    }
+
+    ion-row #one {
+        justify-content: center;
+
+    }
+    ion-row #five {
+        color: #b1b1b1;
+        
+    }
+    ion-button {
+        color: #414141;
+    }
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        text-align: center;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+        text-align: center;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+        text-align: center;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+        text-align: center;
+    }
+    .colheaders {
+        font-family: Gotham-Bold, sans-serif;
+        // line-height: 0.6em;
+        color: #414141;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    .timeDetail {
+        font-family: Nanami-Light, sans-serif;
+        line-height: 0.5em;
+        color: #b1b1b1;
+        line-height: 110%;
+        text-align: center;
+    }
+    .totalDetail {
+        font-family: Nanami-Light, sans-serif;
+        line-height: 0.5em;
+        color: #414141;
+        line-height: 110%;
+        text-align: center;
+    }
+}

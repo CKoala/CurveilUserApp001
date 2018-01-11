@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{ order.TaskIdentifier }}</ion-title>
+        <p *ngIf="user_id">Logged in as: {{displayName}}</p>
+        <p *ngIf="!user_id">Not Logged in</p>
+        <ion-grid id="segmentControl" mode="md">
+            <ion-row>
+                <ion-col (click)="secondsTimeUnit()">
+                    sec
+                </ion-col>
+                <ion-col (click)="minutesTimeUnit()">
+                    min
+                </ion-col>
+                <ion-col (click)="hoursTimeUnit()">
+                    hrs
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row class="colheaders">
+            <ion-col col-1>
+            </ion-col>
+            <ion-col col-4>
+                <p>start time</p>
+            </ion-col>
+            <ion-col col-4>
+                <p>stop time</p>
+            </ion-col>
+            <ion-col col-3>
+                <p>difference</p>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let time of startarray" class="timeDetail">
+            <ion-col col-1 class="centered">
+                <ion-icon name="ios-trash" id="trash-icon" (click)="removeStartStop(time.$key, time.startTime, time.stopTime)"></ion-icon>
+            </ion-col>
+            <ion-col col-4>
+                 <p id="grey">{{time.startTime}}</p>
+            </ion-col>
+            <ion-col col-4>
+                <p id="grey">{{time.stopTime}}</p>
+            </ion-col>
+            <ion-col col-3>
+                <p *ngIf="secUnits">{{((time.stopTimeunix - time.startTimeunix)/1000).toFixed(2)}}</p>
+                <p *ngIf="minUnits">{{((time.stopTimeunix - time.startTimeunix)/60000).toFixed(2)}}</p>
+                <p *ngIf="hourUnits">{{((time.stopTimeunix - time.startTimeunix)/3600000).toFixed(2)}}</p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-grid>
+        <ion-row class="totalDetail">
+            <ion-col col-8>
+                <p>total time in {{timeStatus.status}}</p>
+            </ion-col>
+            <ion-col col-4>
+                <p *ngIf="secUnits">{{(total/1000).toFixed(2)}}</p>
+                <p *ngIf="minUnits">{{(total/60000).toFixed(2)}}</p>
+                <p *ngIf="hourUnits">{{(total/3600000).toFixed(2)}}
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

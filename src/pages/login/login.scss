@@ -1,0 +1,20 @@
+page-login {
+    ul {
+        list-style-type: none;
+        padding: 0px;
+    }
+    div .LogIn {
+        display: flex;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+    .LogIn button {
+        min-width: 100%;
+        justify-content: center;
+    }
+    p, h4, li {
+        color: #414141;
+    }
+}

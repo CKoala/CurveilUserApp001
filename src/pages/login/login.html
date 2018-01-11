@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Task Timer</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="accountContent" *ngIf="user_id">
+        <h1>Hello {{displayName}}</h1>
+        <p>Email: {{email}}</p>
+        <p>ID: {{user_id}}</p>
+    </div>
+    <div class="LogInPrompt" *ngIf="!user_id">
+        <h4>Log in with google or facebook bellow.</h4>
+        <p> note add the material design button up shadow and disabled view</p>
+    </div>
+    <div class="LogIn">
+        <ul>
+            <li>
+                <button ion-button outline (click)="signOut()" *ngIf="user_id">Logout</button>
+            </li>
+            <li>
+                <button ion-button outline (click)="emailLogin(user)" *ngIf="!user_id">Email Login</button>
+            </li>
+            <li>
+                <button ion-button outline (click)="emailRegister(user)" *ngIf="!user_id">Email Register</button>
+            </li>
+        </ul>
+    </div>
+    <ion-item>
+        <ion-label floating>Email Address</ion-label>
+        <ion-input type="email" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <script src="app.js"></script>
+</ion-content>

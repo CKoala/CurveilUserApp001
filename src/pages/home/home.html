@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <h3>Task Timer</h3>
+    <p *ngIf="user_id">Logged in as: {{displayName}}</p>
+    <p *ngIf="!user_id">Not Logged in</p>
+    <ion-grid id="segmentControl" mode="md">
+      <ion-row>
+        <ion-col (click)="secondsTimeUnit()">
+          sec
+        </ion-col>
+        <ion-col (click)="minutesTimeUnit()">
+          min
+        </ion-col>
+        <ion-col (click)="hoursTimeUnit()">
+          hrs
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <!--when user clicks another row or the header, the new Task becomes the default plus add sign-->
+
+    <div *ngFor="let order of TaskKey">
+      <ion-row id="underline">
+        <ion-col col-1 id="one" class="centered" (click)="showConfirm(order.$key, order.TaskIdentifier)">
+          <ion-icon name="ios-trash" id="trash-icon"></ion-icon>
+        </ion-col>
+        <ion-col id="two" class="centered">
+          <p>{{order.TaskIdentifier}}</p>
+        </ion-col>
+
+        <ion-col id="three">
+          <p id="totHours" class="centered" *ngIf="secUnits">{{(order.Total / 1000).toFixed(2)}}</p>
+          <p id="totHours" class="centered" *ngIf="minUnits">{{(order.Total / 60000).toFixed(2)}}</p>
+          <p id="totHours" class="centered" *ngIf="hourUnits">{{(order.Total / 3600000).toFixed(2)}}</p>
+          <p id="totDesc" class="centered">Total {{timeStatus.status}}</p>
+        </ion-col>
+        <ion-col id="four" class="centered" (click)="startstopTrigger(order.$key, order.TriggerState, order.TaskIdentifier, order.Total)">
+          <p id="startbutton" *ngIf="order.TriggerState">start</p>
+          <p id="stopbutton" *ngIf="!order.TriggerState">stop</p>
+        </ion-col>
+        <ion-col col-1 class="centered" id="five" (click)="openOrder(order)">
+          <ion-icon name="ios-arrow-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <ion-row id="newWBS" (click)="taskInput()" *ngIf="!newTask">
+      <ion-icon name="ios-add-circle-outline"></ion-icon>
+    </ion-row>
+
+
+
+    <ion-row id="newWBSinput" *ngIf="newTask">
+      <ion-col class="centered">
+        <ion-input type="text" class="form-control" id="name" placeholder="Tap here to enter task identifier" [(ngModel)]="newTaskID"
+          name="name" #name="ngModel"></ion-input>
+        <button ion-button outline round color="light" (click)="submitTaskID(newTaskID)">Enter</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

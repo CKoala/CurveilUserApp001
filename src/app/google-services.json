@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "629071315994",
+    "firebase_url": "https://timekeeper-fce57.firebaseio.com",
+    "project_id": "timekeeper-fce57",
+    "storage_bucket": "timekeeper-fce57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:629071315994:android:1ccad8f89d610fb0",
+        "android_client_info": {
+          "package_name": "com.ionicframework.timekeeper384691"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "629071315994-e626s9hotiq9jrbttmb702qpv4hkur06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1w2wyUbi9b9nRc8mc3FrARqMbtfpxOQ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
