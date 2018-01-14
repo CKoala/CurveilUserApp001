@@ -1,22 +1,29 @@
 
 <ion-header>
+<ion-navbar>
+<button ion-button menuToggle>
+<ion-icon name="menu"></ion-icon>
+</button>
 
-  <ion-navbar>
-    <ion-title>library</ion-title>
-  </ion-navbar>
+<ion-title>Library</ion-title>
+</ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
-  <div *ngFor="let coin of coins>">
-    <ion-row>
-      {{coin}}
-      {{coin.name}}
-
+<div>
+  <ion-list *ngFor="let coin of coins">
+    <ion-row id="underline">
+      <ion-col>
+        <p>{{coin.name}}</p>
+        <p>{{coin.price}}</p>
+      </ion-col>
     </ion-row>
+  </ion-list>
+</div>
 
-  </div>
+
 
 </ion-content>

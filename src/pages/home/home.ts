@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
-import { AlertController, NavController, PopoverController, NavParams } from 'ionic-angular';
+import { AlertController, NavController, PopoverController } from 'ionic-angular';
 import * as moment from 'moment';
 import { Observable } from 'rxjs/Observable';
 

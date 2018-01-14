@@ -24840,6 +24840,10 @@ page-home #segmentControl {
   z-index: 100;
 }
 
+page-library ion-row #underline {
+  border-bottom: #b1b1b1 0.25px solid;
+}
+
 page-login ul {
   list-style-type: none;
   padding: 0px;

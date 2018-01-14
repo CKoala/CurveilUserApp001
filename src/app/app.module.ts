@@ -10,6 +10,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { LibraryPage } from '../pages/library/library';
+import { PortfolioPage } from '../pages/portfolio/portfolio';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -18,7 +20,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    LibraryPage,
+    PortfolioPage
   ],
   imports: [
     BrowserModule,
@@ -31,8 +35,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
-  ],
+    LoginPage,
+    LibraryPage,
+    PortfolioPage
+    ],
   providers: [
     StatusBar,
     SplashScreen,

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import * as firebase from 'firebase/app';
-import { AlertController, NavController, PopoverController, NavParams } from 'ionic-angular';
+import { AlertController, NavController, PopoverController } from 'ionic-angular';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -15,13 +15,17 @@ export class LibraryPage {
   user_id;
   user: Observable<firebase.User>;
   newTask;
-  library: FirebaseObjectObservable<any>;
-  coin;
+
+  library: FirebaseListObservable<any[]>;
+  coins;
 
   constructor(public navCtrl: NavController, private db: AngularFireDatabase, private afAuth: AngularFireAuth, public alertCtrl: AlertController, public popoverCtrl: PopoverController) {
     this.user = afAuth.authState;
     this.newTask = false;
-    this.library = db.object('/library/');
+    this.library = db.list('/library/');
+    this.library.subscribe((obj) => {
+      this.coins = obj;
+    })
   
     afAuth.authState.subscribe(user => {
       if (!user) {
