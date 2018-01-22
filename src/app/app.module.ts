@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { LibraryPage } from '../pages/library/library';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
+import { UserEntryPage } from '../pages/user-info-entry/user-info-entry';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +23,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     LoginPage,
     LibraryPage,
-    PortfolioPage
+    PortfolioPage,
+    UserEntryPage
+    
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     LoginPage,
     LibraryPage,
-    PortfolioPage
+    PortfolioPage,
+    UserEntryPage
     ],
   providers: [
     StatusBar,

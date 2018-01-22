@@ -1,0 +1,40 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>User Entry- Check user Access</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+    <div class="centered" (click)="updateUser(user.name, user.coin_code, user.quantity)">
+    submit
+    </div>
+      <ion-item>
+            <ion-label color="primary">name</ion-label>
+            <ion-input type="text" [(ngModel)]="user.name" placeholder="user name"
+            name="name" #name="ngModel"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label color="primary">Coin Code (Usually 3 letters)</ion-label>
+              <ion-input type="text" [(ngModel)]="user.coin_code" placeholder="eg. BTC"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label color="primary">Quantity</ion-label>
+                <ion-input type="number" [(ngModel)]="user.quantity" placeholder="an integer"></ion-input>
+            </ion-item>       
+
+    <div>
+        <ion-list *ngFor="let user of users">
+          <ion-row id="underline">
+            <ion-col>
+              <p>{{user.name}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+      </div>
+
+</ion-content>

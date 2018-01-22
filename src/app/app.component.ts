@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { LibraryPage } from '../pages/library/library';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
+import { UserEntryPage } from '../pages/user-info-entry/user-info-entry';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,8 @@ export class MyApp {
       { title: 'Login', component: LoginPage },
       { title: 'Home', component: HomePage },
       { title: 'LibraryPage', component: LibraryPage },
-      { title: 'PorfolioPage', component: PortfolioPage }
+      { title: 'PorfolioPage', component: PortfolioPage },
+      { title: 'Enter Coin Data', component: UserEntryPage}
 
     ];
 
