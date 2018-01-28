@@ -4,7 +4,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'page-coinPage',
-  templateUrl: 'coinPage.html',
+  templateUrl: 'coin-Page.html',
 })
 export class CoinPage {
 

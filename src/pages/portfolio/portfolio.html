@@ -12,13 +12,23 @@
 
 
 <ion-content padding>
-    <div>
-        <ion-list *ngFor="let coin of coins">
+      <div>
+        <ion-list *ngFor="let coin of users_coins">
           <ion-row id="underline">
             <ion-col>
               <p>{{coin.name}}</p>
-              <p>{{coin.price}}</p>
-              <p>{{coin.risk}}</p>
+              <p>{{coin.$key}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+        </div>
+        <p>----------------------------</p>
+      <div>
+        <ion-list *ngFor="let coin of user_coin">
+          <ion-row id="underline">
+            <ion-col>
+              <p>{{coin.$key}}</p>
+              <p>{{coin.quantity}}</p>
             </ion-col>
           </ion-row>
         </ion-list>

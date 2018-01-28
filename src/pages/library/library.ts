@@ -41,7 +41,7 @@ export class LibraryPage {
 }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PortfolioPage');
+    console.log('ionViewDidLoad LibraryPage');
     
   }
 

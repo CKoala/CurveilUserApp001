@@ -68,12 +68,12 @@ updateUser(name, coin_code, quantity_of_coins) {
     this.user_data.update(idobj);
     
   } else {
-    let message = "coin code is not part of Curveil library, please enter a valid code"
+    // let message = "coin code is not part of Curveil library, please enter a valid code"
   }
 }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PortfolioPage');
+    console.log('ionViewDidLoad UserEntryPages');
     
   }
 
